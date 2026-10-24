@@ -48,7 +48,6 @@ export default pipeline({
     cleanEdition({
       dir: import.meta.dirname,
       files: [{ path: "reference/raw/wikisource-pages.json", sha256: "6b51aecc81659095f838cab5221b346482ac09a0baf62d34840669643cefab16" }],
-      notes: "page-foot",
       read: readWikisource,
     }),
     // The shadow (anchors and the fidelity check). Scope and Sourcing to Contents

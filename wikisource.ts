@@ -69,13 +69,18 @@ export function readWikisource(files: Array<{ path: string; text: string }>): Ed
   // and "== Annex B ==" over "=== ESTIMATIVE LANGUAGE ===" (p.23) are one heading each, as the
   // contents prints them ("A: Russia—Kremlin's TV…", "B: Estimative Language").
   wikitext = wikitext
-    .replace(/==\s*Annex A\s*==\s*\n===\s*(.*?)\s*===/, (_, t) => `== Annex A: ${t} ==`)
+    // (The PDF sets Annex A's title in one bold face; the transcription's italic ''Russia'' is dropped.)
+    .replace(/==\s*Annex A\s*==\s*\n===\s*(.*?)\s*===/, (_, t: string) => `== Annex A: ${t.replace(/''/g, "")} ==`)
     .replace(/==\s*Annex B\s*==\s*\n+===\s*ESTIMATIVE LANGUAGE\s*===/, "== Annex B: Estimative Language ==");
 
   let inContents = false;
   let list: string[] | null = null;
+  // Each bullet is a paragraph of the assessment (a supporting judgment, often the one quoted:
+  // "CIA and FBI have high confidence in this judgment; NSA has moderate confidence", PDF p.7),
+  // and the site gives list items no paragraph id, so a bullet is served as a paragraph opening
+  // on "• ", which keeps its own permalink (as Columbia's bulleted findings are).
   const flush = () => {
-    if (list) push({ kind: "list", items: list });
+    for (const item of list ?? []) push({ kind: "paragraph", text: `• ${item}` });
     list = null;
   };
   const inline = (s: string) => inlineMarkdown(pieces(s, notes));
@@ -132,6 +137,10 @@ export function readWikisource(files: Array<{ path: string; text: string }>): Ed
     }
     flush();
   }
+  // The PDF prints Annex A's note at the foot of its first page (PDF p.16), after that page's
+  // photograph caption, in the body's reading order: the alignment reads it there.
+  const caption = blocks.findIndex((b) => b.kind === "paragraph" && b.text.startsWith("*Messaging on RT prior"));
+  if (caption !== -1 && notes.length === 1) notes[0].after = caption;
   return { blocks, notes };
 }
 

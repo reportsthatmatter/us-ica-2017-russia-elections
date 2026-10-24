@@ -1,0 +1,116 @@
+# Golden pages: ground truth for this report, read off the PDF page image and checked by `pnpm ingest verify`.
+# Format and rules: @rtm/ingest src/golden.ts and the site's docs/quality-harness.md ("Golden pages").
+# A page marked xfail is a known pipeline defect: it stays red here, verify stays green, and the bead says why.
+# Printed page = PDF page - 10 from PDF p.11; PDF pp.6-9 are printed i-iv; PDF pp.1-5 and 10 carry no number.
+pages:
+  # The Background note (ODNI, unnumbered here: its own folio "1" is left off so the assessment keeps 1-14). Bullets drawn in a Symbol font (U+F0B7), served as "• " paragraphs.
+  - pdf: 2
+    verified_by: "Claude (Opus 5.5), 2026-10-24, against the page image"
+    blocks:
+      - paragraph: {start: "“Assessing Russian Activities and Intentions in", end: "recipients approved by the President."}
+      - paragraph: {start: "• The Intelligence Community rarely can", end: "foreign intelligence in the future."}
+      - paragraph: {start: "• Thus, while the conclusions in", end: "intelligence and sources and methods."}
+      - heading: "The Analytic Process"
+        level: 3
+      - paragraph: {start: "The mission of the Intelligence Community", end: "hide or obfuscate their activities."}
+      - paragraph: {start: "• On these issues of great", end: "that adhere to tradecraft standards."}
+      - paragraph: {start: "• The tradecraft standards for analytic", end: "consistency in judgments over time."}
+      - paragraph: {start: "• Applying these standards helps ensure", end: "to advance US national security."}
+      - paragraph: {start: "Intelligence Community analysts integrate information from", end: "the prospects for the future."}
+      - paragraph: {start: "• A critical part of the", end: "the complexity of the issue."}
+      - paragraph: {start: "• When Intelligence Community analysts use", end: "an analytic assessment or judgment."}
+      - paragraph: {start: "• Some analytic judgments are based", end: "appropriate basis for the judgment."}
+    markers: []
+  # Scope and Sourcing (printed i): the banner heads the page; the Scope paragraph's own "declassified version" sentence is text.
+  - pdf: 6
+    verified_by: "Claude (Opus 5.5), 2026-10-24, against the page image"
+    blocks:
+      - heading: "Scope and Sourcing"
+        level: 2
+      - paragraph: {start: "Information available as of 29 December", end: "the preparation of this product."}
+      - heading: "Scope"
+        level: 3
+      - paragraph: {start: "This report includes an analytic assessment", end: "assessment by all three agencies."}
+      - paragraph: {start: "• This report is a declassified", end: "purely for readability and flow."}
+      - paragraph: {start: "We did not make an assessment", end: "processes or US public opinion."}
+      - paragraph: {start: "• New information continues to emerge,", end: "increased insight into Russian activities."}
+      - heading: "Sourcing"
+        level: 3
+      - paragraph: {start: "Many of the key judgments in", end: "derive from multiple corroborating sources."}
+      - paragraph: {start: "Some of our judgments about Kremlin", end: "relations with the United States."}
+    markers: []
+    must_contain: ["This report is a declassified version of a highly classified assessment. This document’s conclusions are identical"]
+    must_not_contain: ["its conclusions are identical to those in the highly classified assessment but this version"]
+  # Key Judgments (printed ii): bold lead judgments and bullets; the last bullet runs on to p.8.
+  - pdf: 7
+    verified_by: "Claude (Opus 5.5), 2026-10-24, against the page image"
+    blocks:
+      - heading: "Key Judgments"
+        level: 2
+      - paragraph: {start: "**Russian efforts to influence the 2016", end: "effort compared to previous operations.**"}
+      - paragraph: {start: "**We assess Russian President Vladimir Putin", end: "high confidence in these judgments."}
+      - paragraph: {start: "• **We also assess Putin and", end: "judgment; NSA has moderate confidence."}
+      - paragraph: {start: "• Moscow’s approach evolved over the", end: "on undermining her future presidency."}
+      - paragraph: {start: "• Further information has come to", end: "of Russian motivations and goals."}
+      - paragraph: {start: "**Moscow’s influence campaign followed a Russian", end: "as hostile to the Kremlin."}
+      - paragraph: {start: "• Russia’s intelligence services conducted cyber", end: "both major US political parties."}
+      - paragraph: {start: "• We assess with high confidence", end: "and relayed material to WikiLeaks."}
+    markers: []
+  # The assessment in two columns (printed 3): bullets, run-in bold italic subheads read as paragraph openings.
+  - pdf: 13
+    printed: 3
+    verified_by: "Claude (Opus 5.5), 2026-10-24, against the page image"
+    blocks:
+      - paragraph: {start: "• Guccifer 2.0, who claimed to", end: "Guccifer 2.0 interacted with journalists."}
+      - paragraph: {start: "• Content that we assess was", end: "on DCLeaks.com starting in June."}
+      - paragraph: {start: "We assess with high confidence that", end: "not contain any evident forgeries."}
+      - paragraph: {start: "• In early September, Putin said", end: "and denying Russian “state-level” involvement."}
+      - paragraph: {start: "• The Kremlin’s principal international propaganda", end: "to denounce the United States."}
+      - paragraph: {start: "These election-related disclosures reflect a pattern", end: "defacing websites, or releasing e-mails."}
+      - paragraph: {start: "• A prominent target since the", end: "involved data on US athletes."}
+      - paragraph: {start: "Russia collected on some Republican-affiliated targets", end: "conduct a comparable disclosure campaign."}
+      - paragraph: {start: "***Russian Cyber Intrusions Into State and", end: "and related technology and equipment."}
+      - paragraph: {start: "• DHS assesses that the types", end: "not involved in vote tallying."}
+      - paragraph: {start: "***Russian Propaganda Efforts.*** Russia’s state-run propaganda", end: "negative coverage of Secretary Clinton."}
+      - paragraph: {start: "• Starting in March 2016, Russian", end: "to a corrupt political establishment."}
+    markers: []
+  # Annex A's opening (printed 6): the title carries the asterisk note (served as note 1), an italic lead, a photograph caption at the right.
+  - pdf: 16
+    printed: 6
+    verified_by: "Claude (Opus 5.5), 2026-10-24, against the page image"
+    blocks:
+      - heading: "Annex A: Russia -- Kremlin's TV Seeks To Influence Politics, Fuel Discontent in US[^1]"
+        level: 2
+      - paragraph: {start: "*RT America TV, a Kremlin-financed channel", end: "ties to the Russian Government.*"}
+      - paragraph: {start: "In the runup to the 2012", end: "and \"take this government back.\""}
+      - paragraph: {start: "• RT introduced two new shows", end: "the promotion of radical discontent."}
+      - paragraph: {start: "• From August to November 2012,", end: "not reflect the popular will."}
+      - paragraph: {start: "• In an effort to highlight", end: "population and is a \"sham.\""}
+      - paragraph: {start: "*Messaging on RT prior to the", end: "presidential election (RT, 3 November)*"}
+    footnotes: [1]
+    markers: [1]
+  # Annex A, single column with bullets (printed 10).
+  - pdf: 20
+    printed: 10
+    verified_by: "Claude (Opus 5.5), 2026-10-24, against the page image"
+    blocks:
+      - heading: "RT Focuses on Social Media, Building Audience"
+        level: 3
+      - paragraph: {start: "RT aggressively advertises its social media", end: "to expand its overall audience."}
+      - paragraph: {start: "• According to RT management, RT's", end: "news channels) (*AKT*, 4 October)."}
+      - paragraph: {start: "• According to Simonyan, the TV", end: "social networking (*Kommersant*, 29 September)."}
+      - paragraph: {start: "• According to Simonyan, RT uses", end: "media commentaries (*Kommersant*, 29 September)."}
+      - paragraph: {start: "• According to Nikolov, RT requires", end: "on television (*Newreporter.org*, 11 October)."}
+      - paragraph: {start: "• Simonyan claimed in her 3", end: "RT a significant audience boost."}
+      - paragraph: {start: "The Kremlin spends $190 million a", end: "not, however, publish audience information."}
+      - paragraph: {start: "• According to market research company", end: "by 60% (*Kommersant*, 4 July)."}
+      - paragraph: {start: "• RT claims that it is", end: "20 November; RT, 21 November)."}
+      - paragraph: {start: "• RT states on its website", end: "audience numbers (RT, 10 December)."}
+    markers: []
+  # Annex B (printed 13) is printed as a picture: its text layer holds only "Annex B", which anchors the edition's annex here;
+  # its words come from the Wikisource edition and corrections.yaml c-0001.
+  - pdf: 23
+    printed: 13
+    verified_by: "Claude (Opus 5.5), 2026-10-24, against the page image"
+    headings: ["Annex B: Estimative Language"]
+    must_contain: ["**High confidence** generally indicates that judgments are based on high-quality information from multiple sources."]

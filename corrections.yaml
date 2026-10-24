@@ -21,7 +21,7 @@ dismissed:
   # text layer runs their lines into the body's ("the alleged "lack of Messaging on RT prior to
   # the US presidential election democracy""), so the aligner cannot match them. Each caption
   # was read against the page image and matches the PDF's words.
-  - match: "US presidential election (RT, 3 November"
+  - match: "Messaging on RT prior to the US presidential election (RT, 3 November"
     reason: "Caption on PDF p.16, interleaved with the body in the text layer; words checked against the page image."
     added: 2026-10-24
   - match: 'new show "Truthseeker" (RT, 11 November'
@@ -35,9 +35,6 @@ dismissed:
     added: 2026-10-24
   - match: "September 2010, Ria Novosti, 25 October 2012"
     reason: "Caption on PDF p.19, interleaved with the body in the text layer; words checked against the page image."
-    added: 2026-10-24
-  - match: "This annex was originally published on 11 December 2012 by the Open Source Center, now the Open Source Enterprise"
-    reason: "Annex A's asterisk note, printed at the foot of PDF p.16; words checked against the page."
     added: 2026-10-24
   # The cover (PDF p.4) has a hidden text layer: a second banner ("downgraded version of a more
   # sensitive assessment") under the visible one, and a classification line. Not printed visibly; not served.
