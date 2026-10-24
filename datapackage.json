@@ -1,0 +1,61 @@
+{
+  "name": "us-ica-2017-russia-elections",
+  "title": "Assessing Russian Activities and Intentions in Recent US Elections (ICA 2017-01D)",
+  "resources": [
+    {
+      "title": "Intelligence Community Assessment ICA 2017-01D, Assessing Russian Activities and Intentions in Recent US Elections, 6 January 2017, with the Background note \"The Analytic Process and Cyber Incident Attribution\" (25 pages), as released by the Office of the Director of National Intelligence",
+      "path": "archive/ica-2017-01d.pdf",
+      "format": "pdf",
+      "mediatype": "application/pdf",
+      "bytes": 1589106,
+      "hash": "sha256:5876e67e78e92700e57a1e6cf21efeba47840e86b83aaa64353bcc3735f32257",
+      "sources": [
+        {
+          "title": "ODNI: ICA_2017_01.pdf (dni.gov answers 403 to scripts)",
+          "web": "https://www.dni.gov/files/documents/ICA_2017_01.pdf"
+        },
+        {
+          "title": "Wayback capture of the release day, 6 January 2017 (the copy archived here)",
+          "web": "https://web.archive.org/web/20170106210244id_/https://www.dni.gov/files/documents/ICA_2017_01.pdf"
+        },
+        {
+          "title": "Wikimedia Commons copy, byte-identical (SHA-1 76091aacfe6fda61ab3b258ec91ad7c19d135443)",
+          "web": "https://commons.wikimedia.org/wiki/File:Intelligence_Community_Assessment_-_Assessing_Russian_Activities_and_Intentions_in_Recent_US_Elections.pdf"
+        }
+      ],
+      "licenses": [
+        {
+          "name": "public-domain-us-gov",
+          "title": "Work of the United States Government, not subject to copyright in the US (17 U.S.C. 105)"
+        }
+      ]
+    },
+    {
+      "title": "Wikisource transcription of the same file: the MediaWiki API's answer (revisions with content, ids and timestamps) for its Page: namespace, pages 1-25; every page with text Validated. The structure source and a reference for words",
+      "path": "reference/raw/wikisource-pages.json",
+      "format": "json",
+      "mediatype": "application/json",
+      "bytes": 63746,
+      "hash": "sha256:6b51aecc81659095f838cab5221b346482ac09a0baf62d34840669643cefab16",
+      "sources": [
+        {
+          "title": "en.wikisource.org, Index:Intelligence Community Assessment - Assessing Russian Activities and Intentions in Recent US Elections.pdf (fetched 2026-10-24)",
+          "web": "https://en.wikisource.org/wiki/Index:Intelligence_Community_Assessment_-_Assessing_Russian_Activities_and_Intentions_in_Recent_US_Elections.pdf"
+        }
+      ],
+      "licenses": [
+        {
+          "name": "CC-BY-SA-4.0",
+          "title": "Wikisource contributors' transcription and markup (the transcribed text is itself in the public domain)",
+          "path": "https://creativecommons.org/licenses/by-sa/4.0/"
+        }
+      ]
+    }
+  ],
+  "licenses": [
+    {
+      "name": "public-domain-us-gov",
+      "title": "Work of the United States Government, not subject to copyright in the US (17 U.S.C. 105)"
+    }
+  ]
+}
