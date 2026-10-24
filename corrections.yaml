@@ -1,0 +1,46 @@
+# Human corrections to the PDF's text layer, applied deterministically on every ingest.
+# Format: @rtm/ingest src/corrections.ts. Each names its page and why.
+version: 1
+corrections:
+  # Annex B (PDF p.23, printed 13) is printed as a picture: its text layer holds only the heading
+  # "Annex B", the banner and the folio. This supplies the words the page prints, transcribed from
+  # the page image and checked word for word against Wikisource's validated transcription of the same
+  # file (which prints "intelligence Community’s" where the page has a capital I). The likelihood
+  # scale's two rows of terms are the chart's own labels, left to right; its axis (Percent, 0 to 100)
+  # is not transcribed. With the words in the PDF's text, the served Annex B is checked against them
+  # and anchored to page 13 like any other page.
+  - id: c-0001
+    where: { printed: 13 }
+    find: "Annex B"
+    replace: "Annex B ESTIMATIVE LANGUAGE Estimative language consists of two elements: judgments about the likelihood of developments or events occurring and levels of confidence in the sources and analytic reasoning supporting the judgments. Judgments are not intended to imply that we have proof that shows something to be a fact. Assessments are based on collected information, which is often incomplete or fragmentary, as well as logic, argumentation, and precedents. Judgments of Likelihood. The chart below approximates how judgments of likelihood correlate with percentages. Unless otherwise stated, the Intelligence Community’s judgments are not derived via statistical analysis. Phrases such as “we judge” and “we assess”—and terms such as “probable” and “likely”—convey analytical assessments. Almost no chance Very unlikely Unlikely Roughly even chance Likely Very likely Almost certainly Remote Highly improbable Improbable Roughly even odds Probable Highly probable Nearly certain Confidence in the Sources Supporting Judgments. Confidence levels provide assessments of the quality and quantity of the source information that supports judgments. Consequently, we ascribe high, moderate, or low levels of confidence to assessments: High confidence generally indicates that judgments are based on high-quality information from multiple sources. High confidence in a judgment does not imply that the assessment is a fact or a certainty; such judgments might be wrong. Moderate confidence generally means that the information is credibly sourced and plausible but not of sufficient quality or corroborated sufficiently to warrant a higher level of confidence. Low confidence generally means that the information’s credibility and/or plausibility is uncertain, that the information is too fragmented or poorly corroborated to make solid analytic inferences, or that reliability of the sources is questionable."
+    reason: Annex B is printed as an image with no text layer; transcribed from the page image (PDF p.23), checked against Wikisource's validated transcription
+    added: 2026-10-24
+# Suspects read against the page and judged right as served; they leave the review queue.
+dismissed:
+  # Annex A's photograph captions (PDF pp.16-19) are printed at the right of the text, and the
+  # text layer runs their lines into the body's ("the alleged "lack of Messaging on RT prior to
+  # the US presidential election democracy""), so the aligner cannot match them. Each caption
+  # was read against the page image and matches the PDF's words.
+  - match: "US presidential election (RT, 3 November"
+    reason: "Caption on PDF p.16, interleaved with the body in the text layer; words checked against the page image."
+    added: 2026-10-24
+  - match: 'new show "Truthseeker" (RT, 11 November'
+    reason: "Caption on PDF p.17, interleaved with the body in the text layer; words checked against the page image."
+    added: 2026-10-24
+  - match: "Simonyan steps over the White House in the introduction from her short-lived domestic show on REN TV (REN TV, 26 Decembe"
+    reason: "Caption on PDF p.17, interleaved with the body in the text layer; words checked against the page image."
+    added: 2026-10-24
+  - match: "RT anti-fracking reporting (RT, 5 October"
+    reason: "Caption on PDF p.18, interleaved with the body in the text layer; words checked against the page image."
+    added: 2026-10-24
+  - match: "September 2010, Ria Novosti, 25 October 2012"
+    reason: "Caption on PDF p.19, interleaved with the body in the text layer; words checked against the page image."
+    added: 2026-10-24
+  - match: "This annex was originally published on 11 December 2012 by the Open Source Center, now the Open Source Enterprise"
+    reason: "Annex A's asterisk note, printed at the foot of PDF p.16; words checked against the page."
+    added: 2026-10-24
+  # The cover (PDF p.4) has a hidden text layer: a second banner ("downgraded version of a more
+  # sensitive assessment") under the visible one, and a classification line. Not printed visibly; not served.
+  - match: "This report is a downgraded version of a more sensitive assessment; its conclusions are identical to those in the more s"
+    reason: "Hidden text under the cover's visible banner (PDF p.4); the cover's visible words are the title and ICA 2017-01D | 6 January 2017, which the report's title and registry carry."
+    added: 2026-10-24

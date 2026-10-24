@@ -1,0 +1,9 @@
+{
+  "name": "us-ica-2017-russia-elections",
+  "private": true,
+  "type": "module",
+  "description": "Source archive and ingestion definition for: Assessing Russian Activities and Intentions in Recent US Elections (ICA 2017-01D)",
+  "dependencies": {
+    "@rtm/ingest": "github:reportsthatmatter/ingest#v0.28.0"
+  }
+}
